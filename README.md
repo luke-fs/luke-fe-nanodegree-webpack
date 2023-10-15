@@ -1,52 +1,36 @@
 # Evaluate A News Article with Natural Language Processing
 
-4th project at [Udacity](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011) Front End Web Developer Nanodegree program.
-
-This project aims to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. When a user submits a URL of an article, the web page then dispalys sentiment analysis returned from [meaningcloud API](https://www.meaningcloud.com/products/sentiment-analysis), based on the contents of the article.
+Project to emphasis learning on Webpack
 
 ## Build Tools
 * HTML
-* CSS
 * JavaScript
-* Node
+* CSS
 * Express
+* Node
 * Webpack
-* meaningcloud API
 * Jest
+* meaningcloud API
 * Workbox
 
 ## Installation
-Make sure Node and npm are installed from the terminal.
+Node and npm must be installed
 ```
 node -v
 npm -v
 ```
 
-1. Move to the project folder
-```
-cd <project directory>
-```
-2. Clone the repo
-```
-git clone <repo>
-```
-3. Install npm
-```
-npm install
-```
-4. Install loaders and plugins
+1. Installation: loaders and plugins
 ```
 # Choose the necessary installation for your development mode
+npm i -D clean-webpack-plugin
 npm i -D @babel/core @babel/preset-env babel-loader
 npm i -D style-loader node-sass css-loader sass-loader
-npm i -D clean-webpack-plugin
 npm i -D html-webpack-plugin
-npm i -D mini-css-extract-plugin
 npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
+npm i -D mini-css-extract-plugin
 ```
-5. Sign up for an API key at [meaningcloud.com](https://www.meaningcloud.com/developer/create-account)
-
-6. Configure environment variables using dotenv package
+2. Configure env variables using dotenv
 	1. Install the dotenv package
 	```
 	npm install dotenv
@@ -56,11 +40,10 @@ npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 	```
 	API_KEY=**************************
 	```
-7. Start the project
+3. Build the project
+`npm run build-prod`
 
-Command | Action
-:------------: | :-------------:
-`npm run build-prod` | Build project
-`npm start` | Run project
+4. Run the project
+`npm start`
 
-8. Open browser at http://localhost:8081/
+5. Open browser at http://localhost:8080/

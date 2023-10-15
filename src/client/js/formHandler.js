@@ -1,23 +1,21 @@
 function handleSubmit(event) {
     event.preventDefault()
-
-    // check what text was put into the form field
     let formText = document.getElementById('url').value
 
-    if(Client.checkForURL(formText)) {
+    if (Client.checkForURL(formText)) {
     console.log("::: Form Submitted :::")
 
-    postData('http://localhost:8081/api', {url: formText})
+    postData('http://localhost:8080/api', {url: formText})
 
     .then(function(res) {
-        document.getElementById('polarity').innerHTML = 'Polarity: '+polarityChecker(res.score_tag);
         document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
-        document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
+        document.getElementById('polarity').innerHTML = 'Polarity: '+polarityChecker(res.score_tag);
         document.getElementById("confidence").innerHTML = `Confidence: ${res.confidence}`;
         document.getElementById("irony").innerHTML = `Irony: ${res.irony}`;
+        document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
     })
     } else {
-        alert('Seems like an invalid URL, please try with a valid URL.');
+        alert('Retry with a valid URL, please!');
     }
 }
 
@@ -41,7 +39,7 @@ const postData = async (url = "", data = {}) => {
     }
 };
 
-// API response output (https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response)
+// output of API (https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response)
 const polarityChecker = (score) => {
     let display;
     switch (score){
